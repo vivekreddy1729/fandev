@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZmFpci10aHJ1c2gtMTIuY2xlcmsuYWNjb3VudHMuZGV2JA
+        - CLERK_SECRET_KEY=sk_test_0iHuNFuTB5PRzuDkSryGzNuzoffNZLOUOfsaXfpenp
+        - NEXT_PUBLIC_SUPABASE_URL=https://tqbmwpuzwuhzrbrsvads.supabase.co
+        - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxYm13cHV6d3VoenJicnN2YWRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyNTM4MjcsImV4cCI6MjA1NzgyOTgyN30.T3xkJXGYs8kkINav487sCXL705zzAfhm7LauB_JXlvk
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZmFpci10aHJ1c2gtMTIuY2xlcmsuYWNjb3VudHMuZGV2JA
+      - CLERK_SECRET_KEY=sk_test_0iHuNFuTB5PRzuDkSryGzNuzoffNZLOUOfsaXfpenp
+      - NEXT_PUBLIC_SUPABASE_URL=https://tqbmwpuzwuhzrbrsvads.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxYm13cHV6d3VoenJicnN2YWRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyNTM4MjcsImV4cCI6MjA1NzgyOTgyN30.T3xkJXGYs8kkINav487sCXL705zzAfhm7LauB_JXlvk
+    restart: unless-stopped
